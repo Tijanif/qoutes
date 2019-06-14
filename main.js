@@ -43,7 +43,16 @@ const quotes = [
   name: 'Eleanor Roosevelt',
   quote: 'No one can make you feel inferior whitout your consent.'
  }
- 
- 
- 
- ]
+ ];
+
+ const quotesBtn = document.querySelector('#quoteBtn');
+ const quoteAuthor = document.querySelector('#quoteAuthor');
+ const quote = document.querySelector('#quote');
+
+ quotesBtn.addEventListener('click',displyQuote);
+
+ function displyQuote(){
+  let number = Math.floor(Math.random()*quotes.length);
+  quoteAuthor.innerHTML = quotes[number].name;
+  quote.innerHTML = quotes[number].quote;
+ }
